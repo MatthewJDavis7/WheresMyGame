@@ -1,6 +1,6 @@
 # README
 # Set Up
-- Access at 
+- Access at https://wheresmygame.onrender.com
 
 #Reflection
 - Design Choices: I chose to go with EJS for my frontend framework because I was struggling to get React to work so I went back to what I was most comfortable with.
