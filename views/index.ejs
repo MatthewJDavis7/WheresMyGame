@@ -1,0 +1,21 @@
+<%- include('./partials/head') %>
+  <title>
+    <%= title %>
+  </title>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="index-container">
+      <% if(typeof user==='undefined' ){ %>
+        <a href="/auth/google"><button class="btn">Login with Google</button></a>
+        <% } %>
+
+          <main>
+            <h1>Events App</h1>
+            <a href="/events">View Events List</a>
+          </main>
+    </div>
+  </body>
+
+  </html>

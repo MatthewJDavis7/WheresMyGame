@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+  <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+      <h1>
+        <%= title %>
+      </h1>
+      <div id="root">
+        <button id="new-event-btn">Add New Event</button>
+        <%- include('./partials/new-event-form') %>
+          <main class="items-container">
+            <% eventsList.forEach((event) => { %>
+              <article class="item">
+                <div class="text">
+
+                  <h3><%= event.name %></h3>
+                  <p>Type: <%= event.type %></p>
+                  <p>Date: <%= event.date %></p>
+                  <p>City: <%= event.city %>, <%= event.state %></p>
+                  <p>Description: <%= event.description %></p>
+
+                  <form style="display: inline" action="/events/<%= event.id %>" method="get">
+                    <button class="inner-button">View</button>
+                  </form>
+
+                  <button class="delete-event" id="<%= event.id %>">Delete Event</button>
+                </div>
+              </article>
+            <% }) %>
+          </main>
+      </div>
+  </body>
+
+  </html>

@@ -1,0 +1,54 @@
+<%- include('./partials/head') %>
+  <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <%- include('./partials/nav') %>
+      <h1> Event #<%=event.id %></h1>
+
+      <div id="root">
+        <div class="card-holder">
+
+          <form id="update-event-form">
+
+            <h3>
+              <input type="text" name="name" value="<%= event.name %>" class="editable-input" required>
+            </h3>
+            <p>Type:
+              <input type="text" name="type" value="<%= event.type %>" class="editable-input" required>
+            </p>
+            <p>Date:
+              <input type="text" name="date" value="<%= event.date %>" class="editable-input" required>
+            </p>
+            <p>Local:
+              <input type="text" name="local" value="<%= event.local %>" class="editable-input" required>
+            </p>
+            <p>City:
+              <input type="text" name="city" value="<%= event.city %>" class="editable-input" required>
+            </p>
+            <p>State:
+              <input type="text" name="state" value="<%= event.state %>" class="editable-input" required>
+            </p>
+            <p>Address:
+              <input type="text" name="address" value="<%= event.address %>" class="editable-input" required>
+            </p>
+            <p>Price: $
+              <input type="number" name="price" value="<%= event.price %>" class="editable-input" required>
+            </p>
+            <p>Description:
+              <textarea name="description" class="editable-textarea" required><%= event.description %></textarea>
+            </p>
+
+            <button id="update-event" type="submit">Save Updates</button>
+
+          </form>
+
+          <a class="return-event inner-button" href="/events">Return Without Updating</a>
+
+          <button class="delete-event" id="<%= event.id %>">Delete Event</button>
+
+        </div>
+
+      </div>
+  </body>
+  </html>
